@@ -72,7 +72,7 @@ export default {
         formData.append("prompt", this.prompt);
 
         // Send POST request to FastAPI backend
-        const response = await fetch("http://localhost:8000/mask", {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/mask`, {
           method: "POST",
           body: formData,
         });
