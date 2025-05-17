@@ -135,3 +135,9 @@ async def mask_target(file: UploadFile, prompt: str = Form(...)):
     except Exception as e:
         print(f"❌ Error: {str(e)}")
         return JSONResponse(content={"error": str(e)}, status_code=500)
+
+from fastapi.responses import JSONResponse
+
+@app.get("/")
+def root():
+    return JSONResponse({"status": "backend is running"})
